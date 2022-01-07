@@ -21,7 +21,7 @@ function test2(matrix) {
   let newArray = [];
 
   const getAndCheckNewArray = () => {
-    matrix.map((array) => {
+    matrix.forEach((array) => {
       newArray.push(array[0], array[1], array[2]);
       array.shift();
     });
@@ -33,16 +33,18 @@ function test2(matrix) {
     if (matrix[0].length >= 3) {
       getAndCheckNewArray();
     } else {
-      return resultArray;
+      return 
     }
+  
   };
   getAndCheckNewArray();
+ return resultArray
 }
-test2([
+console.log(test2([
   [1, 2, 3, 8, 2, 4],
   [4, 5, 6, 7, 2, 1],
   [7, 8, 9, 4, 7, 3],
-]);
+]))
 
 function test3(stringsArray, alingsArray, counterSymbols) {
   let resultArray = [];
@@ -85,14 +87,14 @@ function test3(stringsArray, alingsArray, counterSymbols) {
   });
   resultArray.push("*".repeat(counterSymbols + 2));
   resultArray.unshift("*".repeat(counterSymbols + 2));
-  return console.log(resultArray);
+  return resultArray
 }
-test3(
+console.log( test3(
   [
     ["Hello", "world"],
     ["Braead", "came", "to", "dinner", "with", "us"],
     ["He", "loves", "tacos"],
   ],
-  ["LEFT", "RIGHT", "LEFT"],
+  ["RIGHT", "RIGHT", "LEFT"],
   16
-);
+))
